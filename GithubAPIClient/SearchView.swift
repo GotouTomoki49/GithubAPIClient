@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State private var cardViewInputs: [CardView.Input] = [CardView.Input(iconImage: UIImage(named: "Taro2")!,
+          title:  "タイトル",
+          language: "swift",
+          star: 2000, description: "説明文",
+          url: "https://www.jec.ac.jp")]
     @State var text: String = ""
     var body: some View {
         NavigationView{
             ScrollView(showsIndicators: false){
-                
+                //カードを入れたい（たくさんある）
+                ForEach(cardViewInputs) { input in
+                    CardView(input: input)
+                    
+                }
             }
-        .padding()
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar{

@@ -19,6 +19,7 @@ struct CardView: View {
         let description: String? //リポジトリー説明
         let url: String //リポジトリーURL
     }
+    let input: Input
     var body: some View {
         //icon
         //title
@@ -37,9 +38,7 @@ struct CardView: View {
     }
     
     var icon: some View{
-        //FIXME: apiから取得に画像に変更
-        //Image(uiImage: input.iconImage)
-        Image(uiImage: UIImage(named: "icon")!)
+        Image(uiImage: input.iconImage)
         // Buttonで包む際に色が変わらないようにする
             .renderingMode(.original)
         //親のサイズに伸縮できるようにする
@@ -94,6 +93,10 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        CardView(input: CardView.Input(iconImage: UIImage(named:"icon")!,
+            title:  "タイトル",
+            language: "swift",
+            star: 2000, description: "説明文",
+            url: "https://www.jec.ac.jp/"))
     }
 }
