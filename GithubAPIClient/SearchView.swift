@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State private var cardViewInputs: [CardView.Input] = [CardView.Input(iconImage: UIImage(named: "Taro2")!,
+    @State private var cardViewInputs: [CardView.Input] = [CardView.Input(iconImage: UIImage(named: "icon")!,
           title:  "タイトル",
           language: "swift",
           star: 2000, description: "説明文",
